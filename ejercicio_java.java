@@ -7,9 +7,19 @@ public class ejercicio_java{
 
     public static void fntRegistrarNota(float n1,float n2,float n3, String nombre){
         float def = (float)((n1 * 0.30) + (n2 * 0.30) + (n3 * 0.40));
-        notas[posicion] = nombre + " " + def;
+        notas[posicion] = "Nombre de Estudiante: " + nombre + "\nNota 1 (30%): " + n1 + "\nNota 2 (30%): " + n2 + "\nNota 3 (40%): " + n3 + "\nNota definitiva: " + def;
         posicion++;
         JOptionPane.showMessageDialog(null,"Nota registrada con éxito", "REGISTRO", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public static void fntMostrarNotas(){
+        if (posicion == 0){
+            JOptionPane.showMessageDialog(null,"No se han registrado notas");
+        }else{
+            for(int i = 0; i < posicion; i++){
+                JOptionPane.showMessageDialog(null,notas[i]);
+            }
+        }
     }
 
     private static void fntMenu(boolean m){
@@ -28,7 +38,7 @@ public class ejercicio_java{
                     fntRegistrarNota(n1,n2,n3,nombre);
                     break;
                 case 2:
-                    //fntMostrarNotas();
+                    fntMostrarNotas();
                     break;
                 case 3:
                     m = false;
