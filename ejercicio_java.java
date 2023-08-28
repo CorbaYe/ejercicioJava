@@ -1,4 +1,4 @@
-import javax.swing.*;
+import javax.swing.JOptionPane;
 
 public class ejercicio_java{
     public static void main(String[] args) {
